@@ -1,1 +1,1 @@
-# AutotestUI
+# AutomatedTests

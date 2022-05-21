@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb712e69-bb2a-4b7c-a384-3ef26d831725" name="Changes" comment="s" />
+    <list default="true" id="eb712e69-bb2a-4b7c-a384-3ef26d831725" name="Changes" comment="s">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageobjects/PerfomanceLabSite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageobjects/SearchSite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/TestClassWithPageObjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Example.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +37,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="299Iur4yGxelsoTKty6s131ILcc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,13 +54,29 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Project",
+    "last_directory_selection": "E:/git/AutomatedTests/src/test/java",
+    "last_opened_file_path": "E:/git/AutomatedTests/src/main/pageobjects",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.Example.ScrollAndOpenForm">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git\AutomatedTests\src\main\pageobjects" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git\AutomatedTests\src\main" />
+      <recent name="E:\git\AutomatedTests\src\test" />
+      <recent name="E:\git\AutomatedTests\src\test\java\pageobjects" />
+      <recent name="E:\git\AutomatedTests\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestClass.ScrollAndOpenForm">
     <configuration name="Example.GoogleSearchForPerfomanceLab (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AutomatedTests" />
       <option name="PACKAGE_NAME" value="" />
@@ -58,20 +89,9 @@
     </configuration>
     <configuration name="Example.GoogleSearchForPerfomanceLab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AutomatedTests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Example" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.Example" />
       <option name="METHOD_NAME" value="GoogleSearchForPerfomanceLab" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -Dfile.encoding=UTF-8" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Example.ScrollAndOpenForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AutomatedTests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Example" />
-      <option name="METHOD_NAME" value="ScrollAndOpenForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,11 +109,10 @@
     </configuration>
     <configuration name="Example.ServicesButtonIsBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AutomatedTests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Example" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.Example" />
       <option name="METHOD_NAME" value="ServicesButtonIsBlue" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea -Dfile.encoding=UTF-8" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,20 +128,104 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestClassWithPageObjects.ScrollAndOpenForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestClassWithPageObjects" />
+      <option name="METHOD_NAME" value="ScrollAndOpenForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClassWithPageObjects.ServicesButtonIsBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestClassWithPageObjects" />
+      <option name="METHOD_NAME" value="ServicesButtonIsBlue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.GoogleSearchForPerfomanceLab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestClass" />
+      <option name="METHOD_NAME" value="GoogleSearchForPerfomanceLab" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.GoogleSearchForPerfomanceLab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestClass" />
+      <option name="METHOD_NAME" value="GoogleSearchForPerfomanceLab" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Dfile.encoding=UTF-8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.ScrollAndOpenForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestClass" />
+      <option name="METHOD_NAME" value="ScrollAndOpenForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.ServicesButtonIsBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestClass" />
+      <option name="METHOD_NAME" value="ServicesButtonIsBlue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass.ServicesButtonIsBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomatedTests" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="test.TestClass" />
+      <option name="METHOD_NAME" value="ServicesButtonIsBlue" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Dfile.encoding=UTF-8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.Example.ScrollAndOpenForm" />
-      <item itemvalue="JUnit.Example.GoogleSearchForPerfomanceLab (1)" />
-      <item itemvalue="JUnit.Example.ServicesButtonIsBlue (1)" />
-      <item itemvalue="JUnit.Example.GoogleSearchForPerfomanceLab" />
-      <item itemvalue="JUnit.Example.ServicesButtonIsBlue" />
+      <item itemvalue="JUnit.TestClass.GoogleSearchForPerfomanceLab" />
+      <item itemvalue="JUnit.TestClass.ScrollAndOpenForm" />
+      <item itemvalue="JUnit.TestClass.ServicesButtonIsBlue" />
+      <item itemvalue="JUnit.TestClassWithPageObjects.ScrollAndOpenForm" />
+      <item itemvalue="JUnit.TestClassWithPageObjects.ServicesButtonIsBlue" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Example.ScrollAndOpenForm" />
-        <item itemvalue="JUnit.Example.ServicesButtonIsBlue (1)" />
-        <item itemvalue="JUnit.Example.GoogleSearchForPerfomanceLab (1)" />
-        <item itemvalue="JUnit.Example.ServicesButtonIsBlue" />
-        <item itemvalue="JUnit.Example.ServicesButtonIsBlue" />
+        <item itemvalue="JUnit.TestClass.ScrollAndOpenForm" />
+        <item itemvalue="JUnit.TestClassWithPageObjects.ScrollAndOpenForm" />
+        <item itemvalue="JUnit.TestClassWithPageObjects.ServicesButtonIsBlue" />
+        <item itemvalue="JUnit.TestClass.ServicesButtonIsBlue" />
+        <item itemvalue="JUnit.TestClass.GoogleSearchForPerfomanceLab" />
       </list>
     </recent_temporary>
   </component>

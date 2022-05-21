@@ -21,7 +21,7 @@ public class TestClassWithPageObjects {
                 .shouldBe(visible)
                 .setValue("performance lab")
                 .pressEnter();
-        $(byText(searchSite.PerfomanceLabLink))
+        searchSite.searchByLink()
                 .shouldBe(visible)
                 .click();
         switchTo()

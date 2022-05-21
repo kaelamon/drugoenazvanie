@@ -1,6 +1,8 @@
 package pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchSite {
@@ -9,6 +11,9 @@ public class SearchSite {
 
     public SelenideElement findInput() {
         return $("input");
+    }
+    public SelenideElement searchByLink(){
+        return $(byText(PerfomanceLabLink));
     }
 
 }

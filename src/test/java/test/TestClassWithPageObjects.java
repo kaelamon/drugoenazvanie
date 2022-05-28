@@ -1,71 +1,81 @@
 package test;
 
-import org.junit.jupiter.api.Test;
-import pageobjects.PerfomanceLabSite;
-import pageobjects.SearchSite;
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.*;
+import pageobjects.PerfomanceLab;
+import pageobjects.Search;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestClassWithPageObjects {
+    public String PerfomanceLabLink = "https://www.performance-lab.ru";
+    public String GooglePage = "https://www.google.ru";
 
+   @AfterEach
+    public void CloseWebDriver() {
+       //после каждого теста, селенид будет закрывать окно, чтоб каждый тест на свежем вебдрайвере
+        Selenide.closeWebDriver();
+   }
     @Test
     public void GoogleSearchForPerfomanceLab() {
-        SearchSite searchSite = new SearchSite();
-        PerfomanceLabSite perfomanceLabSite = new PerfomanceLabSite();
+        Search search = new Search();
+        PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        open(searchSite.GooglePage);
-        searchSite.findInput()
+        open(GooglePage);
+        search.findInput()
                 .shouldBe(visible)
                 .setValue("performance lab")
                 .pressEnter();
-        searchSite.searchByLink()
+        search.searchByText()
                 .shouldBe(visible)
                 .click();
         switchTo()
                 .window(1);
-        perfomanceLabSite.perfomanceLabImg()
+        perfomanceLab.perfomanceLabImg()
                 .shouldBe(visible);
+
     }
     @Test
     public void ServicesButtonIsBlue() {
-        PerfomanceLabSite perfomanceLabSite = new PerfomanceLabSite();
+        PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        open(perfomanceLabSite.PerfomanceLabLink);
-        perfomanceLabSite.hoverMenu()
+        open(PerfomanceLabLink);
+        perfomanceLab.hoverMenu()
                 .shouldBe(visible);
-        perfomanceLabSite.hoverMenu()
+        perfomanceLab.hoverMenu()
                 .hover();
-        perfomanceLabSite.hoverMenuWebTestingLink()
+        perfomanceLab.hoverMenuWebTestingLink()
                 .shouldBe(visible)
                 .click();
         switchTo()
                 .window(1);
-        perfomanceLabSite.getAPrice()
+        perfomanceLab.getAPrice()
                 .shouldBe(visible);
-        assertEquals(perfomanceLabSite.getAPriceBackground(), "rgba(79, 173, 255, 1)");
+        String errMessage = "Должно быть синим \"(rgba(79, 173, 255, 1)\", у вас " + perfomanceLab.getAPriceBackground();
+        assertEquals(perfomanceLab.getAPriceBackground(), "rgba(79, 173, 255, 1)", errMessage);
+
     }
 
     @Test
     public void ScrollAndOpenForm(){
-        PerfomanceLabSite perfomanceLabSite = new PerfomanceLabSite();
+        PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        open(perfomanceLabSite.PerfomanceLabLink);
-        perfomanceLabSite.hoverMenu()
+        open(PerfomanceLabLink);
+        perfomanceLab.hoverMenu()
                 .shouldBe(visible);
-        perfomanceLabSite.hoverMenu()
+        perfomanceLab.hoverMenu()
                 .hover();
-        perfomanceLabSite.autoTestingLink()
+        perfomanceLab.autoTestingLink()
                 .shouldBe(visible)
                 .click();
-        perfomanceLabSite.workExamplesElement()
+        perfomanceLab.workExamplesElement()
                 .shouldBe(visible)
                 .scrollTo();
-        perfomanceLabSite.lazyImg()
+        perfomanceLab.lazyImg()
                 .click();
-        perfomanceLabSite.hubspotElement()
+        perfomanceLab.hubspotElement()
                 .shouldBe(visible);
     }
 }

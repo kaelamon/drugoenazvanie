@@ -1,5 +1,7 @@
 package test;
 
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -9,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestClass {
 
+    @AfterEach
+    //после каждого теста, селенид будет закрывать окно, чтоб каждый тест на свежем вебдрайвере
+    public void CloseWebDriver() {
+        Selenide.closeWebDriver();
+    }
     @Test
     public void GoogleSearchForPerfomanceLab() {
         open("https://www.google.ru"); // открываеть сайт

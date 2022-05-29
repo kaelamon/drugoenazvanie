@@ -2,6 +2,7 @@ package test;
 
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
@@ -9,6 +10,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Проверки без использованием PageObjects")
 public class TestClass {
 
     @AfterEach
@@ -17,6 +19,7 @@ public class TestClass {
         Selenide.closeWebDriver();
     }
     @Test
+    @DisplayName("Проверка нахождения сайта \"Перфоманс Лаб\" через гугл")
     public void GoogleSearchForPerfomanceLab() {
         open("https://www.google.ru"); // открываеть сайт
         $("input").shouldBe(visible).setValue("performance lab").pressEnter(); //пишем название сайта и жмыхаем энтер
@@ -25,6 +28,7 @@ public class TestClass {
         $x("//img[@alt='Перфоманс Лаб Logo']").shouldBe(visible); //сверяем что лого перфоманса на месте
     }
     @Test
+    @DisplayName("Проверка что кнопка \"Узнать Цену\" синяя")
     public void ServicesButtonIsBlue() {
         open("https://www.performance-lab.ru"); // открываеть сайт
         $(byId("menu-item-317")).shouldBe(visible);
@@ -37,6 +41,7 @@ public class TestClass {
     }
 
     @Test
+    @DisplayName("Проверка открытия окна \"Примеры выполненных проектов\"")
     public void ScrollAndOpenForm(){
         open("https://www.performance-lab.ru");
         $(byId("menu-item-317")).shouldBe(visible);

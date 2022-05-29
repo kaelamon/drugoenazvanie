@@ -9,4 +9,7 @@ public class PerfomanceApi {
     public Validatable getUsers() {
         return connection.getSpecification().log().all().get("/users");
     }
+    public Validatable getCars() {
+        return connection.getSpecification().log().all().get("/cars");
+    }
 }

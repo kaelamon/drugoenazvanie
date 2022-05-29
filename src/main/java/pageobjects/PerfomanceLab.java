@@ -30,7 +30,7 @@ public class PerfomanceLab {
     public String getAPriceBackground() {
         return $x("//a[@href='#1']").getCssValue("background-color");
     }
-    //элемент "Автоматизация тестирвоани" по линку
+    //элемент "Автоматизация тестирования" по линку
     public SelenideElement autoTestingLink() {
         return $(byXpath("//a[@href='https://www.performance-lab.ru/avtomatizacija-testirovanija']"), 1);
     }

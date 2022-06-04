@@ -3,8 +3,6 @@ package test;
 import api.integrationSubsystems.perfomance.PerfomanceApi;
 import api.integrationSubsystems.perfomance.models.Cars;
 import api.integrationSubsystems.perfomance.models.User;
-import io.qameta.allure.Step;
-import jdk.jfr.Category;
 import org.junit.jupiter.api.*;
 
 import static io.qameta.allure.Allure.step;

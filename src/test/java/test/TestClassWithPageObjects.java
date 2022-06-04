@@ -1,12 +1,11 @@
 package test;
 
 import com.codeborne.selenide.Selenide;
-import io.qameta.allure.Flaky;
 import org.junit.jupiter.api.*;
 import pageobjects.PerfomanceLab;
 import pageobjects.Search;
 
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -100,8 +99,9 @@ public class TestClassWithPageObjects {
         });
         step("Проверяем что окно обратной связи открылось", () -> {
             perfomanceLab.hubspotElement()
-                    .shouldBe(visible);
+                    .should(exist);
         });
+
 
     }
 }

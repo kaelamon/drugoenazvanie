@@ -1,6 +1,5 @@
 package test;
 
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 import pageobjects.PerfomanceLab;
 import pageobjects.Search;
@@ -13,21 +12,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Проверки с использованием PageObjects")
 public class TestClassWithPageObjects {
-    public String PerfomanceLabLink = "https://www.performance-lab.ru";
-    public String GooglePage = "https://www.google.ru";
+    public String performanceLabLink = "https://www.performance-lab.ru";
+    public String googlePage = "https://www.google.ru";
 
    @AfterEach
-    public void CloseWebDriver() {
+    public void closeWebDriver() {
        //после каждого теста, селенид будет закрывать окно, чтоб каждый тест на свежем вебдрайвере
-        Selenide.closeWebDriver();
+        closeWebDriver();
    }
     @Test
     @DisplayName("Проверка нахождения сайта \"Перфоманс Лаб\" через гугл")
-    public void GoogleSearchForPerfomanceLab() {
+    public void googleSearchForPerformanceLab() {
         Search search = new Search();
         PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        step("Открываем страницу гугла", () -> {open(GooglePage);});
+        step("Открываем страницу гугла", () -> {open(googlePage);});
         step("Вводим \"performance lab\" и нажимаем кнопку Enter", () -> {
             search.findInput()
                 .shouldBe(visible)
@@ -46,10 +45,10 @@ public class TestClassWithPageObjects {
     }
     @Test
     @DisplayName("Проверка что кнопка \"Узнать Цену\" синяя")
-    public void ServicesButtonIsBlue() {
+    public void servicesButtonIsBlue() {
         PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        step("Открываем сайт \"Перфоманс Лаб\"", () -> {open(PerfomanceLabLink);});
+        step("Открываем сайт \"Перфоманс Лаб\"", () -> {open(performanceLabLink);});
         step("Проверяем видимость кнопки \"Услуги\"", () -> {
             perfomanceLab.hoverMenu()
                 .shouldBe(visible);});
@@ -73,10 +72,10 @@ public class TestClassWithPageObjects {
 
     @Test
     @DisplayName("Проверка открытия окна \"Примеры выполненных проектов\"")
-    public void ScrollAndOpenForm(){
+    public void scrollAndOpenForm(){
         PerfomanceLab perfomanceLab = new PerfomanceLab();
 
-        step("Открываем сайт \"Перфоманс Лаб\"", () -> {open(PerfomanceLabLink);});
+        step("Открываем сайт \"Перфоманс Лаб\"", () -> {open(performanceLabLink);});
         step("Проверяем видимость кнопки \"Услуги\"", () -> {
             perfomanceLab.hoverMenu()
                     .shouldBe(visible);});

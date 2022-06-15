@@ -1,6 +1,5 @@
 package test;
 
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,12 +14,12 @@ public class TestClass {
 
     @AfterEach
     //после каждого теста, селенид будет закрывать окно, чтоб каждый тест на свежем вебдрайвере
-    public void CloseWebDriver() {
-        Selenide.closeWebDriver();
+    public void closeWebDriver() {
+        closeWebDriver();
     }
     @Test
     @DisplayName("Проверка нахождения сайта \"Перфоманс Лаб\" через гугл")
-    public void GoogleSearchForPerfomanceLab() {
+    public void soogleSearchForPerfomanceLab() {
         open("https://www.google.ru"); // открываеть сайт
         $("input").shouldBe(visible).setValue("performance lab").pressEnter(); //пишем название сайта и жмыхаем энтер
         $(byText("https://www.performance-lab.ru")).shouldBe(visible).click(); //нахоим по тексту элемент и ждем когда он прогрузится
@@ -29,7 +28,7 @@ public class TestClass {
     }
     @Test
     @DisplayName("Проверка что кнопка \"Узнать Цену\" синяя")
-    public void ServicesButtonIsBlue() {
+    public void servicesButtonIsBlue() {
         open("https://www.performance-lab.ru"); // открываеть сайт
         $(byId("menu-item-317")).shouldBe(visible);
         $(byId("menu-item-317")).hover();
@@ -42,7 +41,7 @@ public class TestClass {
 
     @Test
     @DisplayName("Проверка открытия окна \"Примеры выполненных проектов\"")
-    public void ScrollAndOpenForm(){
+    public void scrollAndOpenForm(){
         open("https://www.performance-lab.ru");
         $(byId("menu-item-317")).shouldBe(visible);
         $(byId("menu-item-317")).hover();

@@ -49,4 +49,5 @@ public class Cars {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
 }

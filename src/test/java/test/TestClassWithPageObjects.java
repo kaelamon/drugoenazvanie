@@ -1,5 +1,6 @@
 package test;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import pageobjects.PerfomanceLab;
 import pageobjects.Search;
@@ -7,21 +8,17 @@ import pageobjects.Search;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+@Epic("Проверки с использованием PageObjects")
+@Feature("Проверки с использованием PageObjects, для домашнего задания по Автоматизированным тестам")
+public class TestClassWithPageObjects extends BaseTest {
 
 
-@DisplayName("Проверки с использованием PageObjects")
-public class TestClassWithPageObjects {
-    public String performanceLabLink = "https://www.performance-lab.ru";
-    public String googlePage = "https://www.google.ru";
-
-   @AfterEach
-    public void closeWebDriver() {
-       //после каждого теста, селенид будет закрывать окно, чтоб каждый тест на свежем вебдрайвере
-        closeWebDriver();
-   }
     @Test
     @DisplayName("Проверка нахождения сайта \"Перфоманс Лаб\" через гугл")
+    @Story("Проверка нахождения сайта \"Перфоманс Лаб\" через гугл")
+    @Description("Проверяем что сайт Перфоманс Лаб находится через поисковик гугл и при переходе проверяем что сайт открылся")
     public void googleSearchForPerformanceLab() {
         Search search = new Search();
         PerfomanceLab perfomanceLab = new PerfomanceLab();
@@ -45,6 +42,8 @@ public class TestClassWithPageObjects {
     }
     @Test
     @DisplayName("Проверка что кнопка \"Узнать Цену\" синяя")
+    @Story("Проверка что кнопка \"Узнать Цену\" синяя")
+    @Description("Проверяем что кнопка \"Узнать Цену\" синяя на странице \"Тестирование сайта\"")
     public void servicesButtonIsBlue() {
         PerfomanceLab perfomanceLab = new PerfomanceLab();
 
@@ -65,13 +64,42 @@ public class TestClassWithPageObjects {
         step("Проверка что кнопка \"Узнать цену\" отображается", () -> {
             perfomanceLab.getAPrice()
                 .shouldBe(visible);});
-        String errMessage = "Должно быть синим \"(rgba(79, 173, 255, 1)\", у вас " + perfomanceLab.getAPriceBackground();
         step("Проверяем что кнопка синяя", () -> {
-            assertEquals(perfomanceLab.getAPriceBackground(), "rgba(79, 173, 255, 1)", errMessage);});
+            assertEquals(perfomanceLab.getAPriceBackground(), "rgba(79, 173, 255, 1)");});
+    }
+
+    @Test
+    @DisplayName("Проверка что кнопка \"Узнать Цену\" красная")
+    @Story("Проверка что кнопка \"Узнать Цену\" красная")
+    @Description("Негативный кейс! Проверяем что кнопка \"Узнать Цену\" крассная на странице \"Тестирование сайта\"")
+    public void servicesButtonIsRed() {
+        PerfomanceLab perfomanceLab = new PerfomanceLab();
+
+        step("Открываем сайт \"Перфоманс Лаб\"", () -> {open(performanceLabLink);});
+        step("Проверяем видимость кнопки \"Услуги\"", () -> {
+            perfomanceLab.hoverMenu()
+                    .shouldBe(visible);});
+        step("Наводимся на кнопку \"Услуги\"", () -> {
+            perfomanceLab.hoverMenu()
+                    .hover();});
+        step("Нажимаем на кнопку \"Тестирование сайта\"", () -> {
+            perfomanceLab.hoverMenuWebTestingLink()
+                    .shouldBe(visible)
+                    .click();});
+        step("Переключаемся на новую вкладку", () -> {
+            switchTo()
+                    .window(1);});
+        step("Проверка что кнопка \"Узнать цену\" отображается", () -> {
+            perfomanceLab.getAPrice()
+                    .shouldBe(visible);});
+        step("Проверяем что кнопка красная", () -> {
+            assertEquals(perfomanceLab.getAPriceBackground(), "rgba(255, 0, 0, 1)");});
     }
 
     @Test
     @DisplayName("Проверка открытия окна \"Примеры выполненных проектов\"")
+    @Story("Проверка открытия окна \"Примеры выполненных проектов\"")
+    @Description("Проверка открытия окна \"Примеры выполненных проектов\" на странице \"Автоматизация тестирования\"")
     public void scrollAndOpenForm(){
         PerfomanceLab perfomanceLab = new PerfomanceLab();
 
@@ -101,6 +129,6 @@ public class TestClassWithPageObjects {
                     .should(exist);
         });
 
-
     }
+
 }

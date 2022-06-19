@@ -4,6 +4,8 @@ package test;
 
 import api.integrationSubsystems.perfomance.models.Cars;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.*;
 import org.apache.hc.core5.http.HttpResponse;
@@ -16,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-@DisplayName("Рест запросы через Apache HTTP")
+@Epic("apache Http Client тесты")
+@Feature("Тесты api по средством apache Http Client")
 public class RestHttpClientTest {
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
